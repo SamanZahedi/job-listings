@@ -4,6 +4,9 @@ import data from "./data.json";
 
 const Card = () => {
   const [info, setInfo] = useState(data);
+  if (info === "") {
+    setInfo(data);
+  }
   return info.map((el) => {
     return (
       <div className="card">
@@ -24,8 +27,9 @@ const Card = () => {
           </div>
         </div>
         <div className="skills">
-           {el.languages.map( lang => <span>{lang}</span>)}
-     
+          {el.languages.map((lang) => (
+            <span>{lang}</span>
+          ))}
         </div>
       </div>
     );
